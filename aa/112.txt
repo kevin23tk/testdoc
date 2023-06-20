@@ -1,0 +1,54 @@
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+
+在Bootstrap中，navbar的折叠行为是根据屏幕宽度的断点进行触发的。默认情况下，以下是Bootstrap 5中使用的屏幕宽度断点和对应的类名：
+
+Extra small (xs): 0px
+Small (sm): 576px
+Medium (md): 768px
+Large (lg): 992px
+Extra large (xl): 1200px
+当屏幕宽度小于或等于特定断点时，navbar将折叠并显示切换按钮。在你提供的代码中，使用了navbar-expand-lg类，这意味着navbar将在屏幕宽度达到992px（即lg断点）时才会折叠。
+
+如果你想要在更小的屏幕宽度上折叠navbar，你可以使用相应的类，例如navbar-expand-md（在768px时折叠）或navbar-expand-sm（在576px时折叠）。根据你的需求和设计，你可以选择合适的断点来控制navbar的折叠行为。
+
+-------------------------------------------------------------------------------------------------------------------------
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+<button>元素的属性含义如下：
+
+class="navbar-toggler"：指定按钮的样式类，表示它是一个导航栏切换按钮。
+type="button"：指定按钮的类型为按钮，而不是提交按钮或重置按钮。
+data-bs-toggle="collapse"：指定按钮触发折叠行为，即点击按钮时切换目标元素的折叠状态。
+data-bs-target="#navbarNav"：指定目标元素的选择器，即要折叠/展开的导航栏内容。
+aria-controls="navbarNav"：为辅助技术提供的属性，指定被按钮控制的元素的ID。
+aria-expanded="false"：为辅助技术提供的属性，指示被按钮控制的元素是否处于展开状态。
+aria-label="Toggle navigation"：为辅助技术提供的属性，提供按钮的描述性标签，表示它是用于导航栏的切换按钮。
+
+这个汉堡按钮会自动靠右对齐 
+根据Bootstrap的默认样式，这是通过以下CSS规则实现的：
+.navbar-expand-lg .navbar-collapse {
+  justify-content-end;
+}
+
+justify-content-end是一种CSS属性值，用于指定容器中的内容在主轴上（水平轴）的对齐方式。具体来说，它将内容向容器的末尾（右侧）对齐。
+
+在Flex布局中，justify-content属性用于控制子元素在主轴上的对齐方式。通过设置justify-content: end;，内容将靠近容器的结束位置。对于从左到右的布局，内容将右对齐；而对于从右到左的布局，内容将左对齐。
+
+在上述代码中，.navbar-collapse元素被设置为justify-content-end，这意味着导航栏内容将靠近容器的右侧对齐，使其在lg屏幕宽度以下时在右边显示。
+
+这样设置可以确保在折叠导航栏的情况下，导航链接和其他内容靠近右侧，并与汉堡按钮对齐，以提供更好的用户体验。
+
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
