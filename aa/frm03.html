@@ -1,0 +1,136 @@
+<!--
+ * @Author: Kamikawa
+ * @Date: 2023-06-29 10:58:28
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2023-06-29 17:58:24
+ * @FilePath: \JS_TEST\ToriMe-Demo\me\frm03.html
+ * @Description: 
+ * 
+ * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous" ></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <title>Document</title>
+
+    <style>
+        /*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+        .openbtn8{
+            position: relative;/*ボタン内側の基点となるためrelativeを指定*/
+            /* background:#eceae9; */
+            cursor: pointer;
+            width: 50px;
+            height:50px;
+            border-radius: 5px;
+        }
+
+        /*ボタン内側*/
+        .openbtn8 .openbtn-area{
+            transition: all .6s;/*アニメーションの設定*/
+            width:50px;
+            height:50px;
+        }
+
+        .openbtn8 span{
+            display: inline-block;
+            transition: all .4s;
+            position: absolute;
+            left: 14px;
+            height: 3px;
+            border-radius: 2px;
+            background: #9c9898;
+            width: 45%;
+            }
+
+        .openbtn8 span:nth-of-type(1) {
+            top:15px; 
+        }
+
+        .openbtn8 span:nth-of-type(2) {
+            top:23px;
+        }
+
+        .openbtn8 span:nth-of-type(3) {
+            top:31px;
+        }
+
+        /*activeクラスが付与されると .openbtn-areaが360度回転し、その中の線が回転して×に*/
+        .openbtn8.active .openbtn-area{
+            transform: rotate(360deg);
+        }
+
+        .openbtn8.active span:nth-of-type(1) {
+            top: 18px;
+            left: 18px;
+            transform: translateY(6px) rotate(-45deg);
+            width: 30%;
+        }
+
+        .openbtn8.active span:nth-of-type(2) {
+            opacity: 0;
+        }
+
+        .openbtn8.active span:nth-of-type(3){
+            top: 30px;
+            left: 18px;
+            transform: translateY(-6px) rotate(45deg);
+            width: 30%;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+
+    <div id="wrap" class="border border-primary" style="width: 100%;">
+        <header class="container-fluid" style="background-color:aquamarine;">
+            
+            <div class="container-fluid">
+                <div class="d-flex flex-wrap align-items-stretch justify-content-between">
+
+                    <div class="text-start d-flex flex-wrap align-items-stretch">
+                    <button class="navbar-toggler pe-5 d-none d-lg-block d-xl-block d-xxl-block" type="button" data-bs-toggle="collapse" data-bs-target="#js-navbarNav" aria-controls="#js-navbarNav" aria-expanded="ture" aria-label="Toggle navigation">
+                        <div class="openbtn8"><div class="openbtn-area"><span></span><span></span><span></span></div></div>
+                    </button>
+                    <a href="index.html" style="height: 100px;">header</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </header>
+
+        <main style="display: flex;height: 300px;">
+
+            <div class="collapse navbar-collapse fadeLeft" style="background-color:bisque;flex: none; width: 300px;" id="js-navbarNav">js-navbarNav</div>
+        
+            <div class="container-fluid p-0" style="background-color:beige ;" id="container">container</div>
+        
+        </main>
+
+        <footer class="container-fluid" style="background-color:aliceblue; height: 100px;">footer</footer>
+    </div>
+
+</body>
+
+<script>
+    $(".openbtn8").click(function () {
+        $(this).toggleClass('active');
+    });
+  </script>
+
+</html>
